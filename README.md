@@ -35,7 +35,7 @@
 
 .
 ## API Structure
-```Client sending request``` -> ```models files``` -> ```grab data from MongoDB```->```use case files, data is processed```-> ```controller files, handle req, res``` -> ```router files, handling path``` -> ```server.js```
+```Client sending request``` -> ```server.js``` -> ```router files, handle req, res```->```use case files```->```model files```->```grab data from MongoDB```->```give response to client```
 
 # API Request and Response
 
