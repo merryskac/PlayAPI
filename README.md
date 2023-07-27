@@ -258,14 +258,11 @@
 3. Clone this repo locally in your computer using terminal
 \
   ```git clone https://github.com/merryskac/PlayAPI.git ``` \
-
   and then do on your terminal
-
   ```cd playAPI```
 
 4. On your terminal, do
-```npm install```
-to install necessary package for this program
+```npm install``` to install necessary package for this program
 
 5. Make sure you have installed "MongoDB Compass" on your computer. You can get it from https://www.mongodb.com/products/compass
 
