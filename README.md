@@ -3,7 +3,7 @@
 ## Database Structure
 
 * Channel Schema
-```http
+```
   {
     _id: ObjectId(),
     title: String,
@@ -13,7 +13,7 @@
   }
 ```
 * Comment Schema
-```http
+```
   {
     _id: ObjectId(),
     username: String,
@@ -23,7 +23,7 @@
   }
 ```
 * Product Schema
-```http
+```
   {
     _id: ObjectId(),
     link_product: String,
@@ -36,11 +36,11 @@
 .
 ## API Structure
 * Get All Thumbnail
-```http
+```
   GET /play/thumbnails
 ```
 * Post a video
-```http
+```
   POST /play/post-video
 
 ```
