@@ -24,6 +24,7 @@ const Channel = mongoose.model('Channel', channelSchema)
 getAllVideos().then(data => {
   if(data.length<1){
     const addData = new Channel({
+      _id: "64c21000258b2c61c16a576e",
       title: "Selamat lebaran",
       thumbnail_img: "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
     }).save().then(data => console.log("Data channel inputted"))
