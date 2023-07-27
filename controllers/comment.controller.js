@@ -7,7 +7,7 @@ export const getCommentById = async (req,res)=>{
     return (res.status(200).json({comments}))
   }catch(err){
     console.log(err.message)
-    res.status(400).json({message: err.message})
+    res.status(404).json({message: err.message})
   }
 }
 
@@ -19,6 +19,6 @@ export const addAComment = async (req,res)=>{
     return (res.status(200).json({message: "Comment successfully added"}))
   }
   catch(err){
-    return (res.status(400).json({message:err.message}))
+    return (res.status(404).json({message:err.message}))
   }
 }

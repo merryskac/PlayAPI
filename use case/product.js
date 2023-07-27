@@ -48,5 +48,6 @@ export async function getProductsById(id){
   // if(products.length < 1){
   //   throw Error('Data not found')
   // }
+  console.log(products)
   return products
 }

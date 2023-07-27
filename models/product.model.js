@@ -32,8 +32,8 @@ export async function addProducts(linkProduct,name, price, videoID){
     price: price,
     videoID: videoID
   })
-  await addProduct.save()
-  return true
+  const add =await addProduct.save()
+  return add
 }
 
 export async function getAllProductsById(id){
