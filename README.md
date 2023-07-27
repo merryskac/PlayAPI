@@ -250,3 +250,41 @@
     OR
   * Code: 400 \
     content: ```{message: price should be number}```
+
+## HOW TO RUN
+1. Open your VSCode or terminal 
+2. Make sure you have installed "NodeJs". If you haven't, you   can get it here:\
+    NodeJS: https://nodejs.org/en
+3. Clone this repo locally in your computer using terminal
+\
+  ```git clone https://github.com/merryskac/PlayAPI.git ``` \
+
+  and then do on your terminal
+
+  ```cd playAPI```
+
+4. On your terminal, do
+```npm install```
+to install necessary package for this program
+
+5. Make sure you have installed "MongoDB Compass" on your computer. You can get it from https://www.mongodb.com/products/compass
+
+6. On MongoDB Compass, connect to the Database with URI
+ ```mongodb://localhost:27017```
+
+7. On your terminal, type 
+```node server.js```
+
+8. On your terminal, there will be message
+```
+server Open!
+Database Connected!
+```
+
+9. Now you can use the API. the base URL is 
+
+```localhost:3000```\
+Make sure this port is clear.
+You can try with your browser, or Postman App, or terminal using curl.
+
+P.S. I hope this instruction is clear, and hopefully I can get max Grade for this mid term in this GIGIH 3.0 Program ✌
