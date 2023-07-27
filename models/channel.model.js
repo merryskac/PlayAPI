@@ -18,6 +18,7 @@ const channelSchema = new mongoose.Schema({
     default: null
   }
 })
+
 const Channel = mongoose.model('Channel', channelSchema)
 
 export async function getAllVideos(){
@@ -30,7 +31,7 @@ export async function inputVideo(title,img){
     thumbnail_img: img
   })
   await app.save()
-  return true
+  return app
 }
 
 export async function getVideoById(id){

@@ -16,7 +16,7 @@ export const addAProduct = async(req, res)=>{
 
   try{
     const add = await addProduct(link_product ,name, price, id)
-    return (res.status(201).json({message: 'Product has added'}))
+    return (res.status(201).json({product: add}))
   }
   catch(err){
     return (res.status(400).json({message:err.message}))
