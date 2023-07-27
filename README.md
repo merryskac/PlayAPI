@@ -279,7 +279,6 @@ Database Connected!
 ```
 
 9. Now you can use the API. the base URL is 
-
 ```localhost:3000```\
 Make sure this port is clear.
 You can try with your browser, or Postman App, or terminal using curl.
