@@ -35,53 +35,7 @@
 
 .
 ## API Structure
-* Get All Thumbnail
-```
-  GET /play/thumbnails
-```
-* Post a video
-```
-  POST /play/post-video
-
-```
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `title` | `string` | **Required**. Your Video title |
-| `thumbnail_img` | `string` | **Required**. Your thumbnail source |
-
-* Get Comments By Video Id
-```
-  GET /play/comments/${id}
-```
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. Video id (_id)|
-
-* Post a comment
-```
-  POST /play/comments/${id}
-```
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. Video id (_id) |
-| `username` | `string` | **Required**. your username |
-| `comment` | `string` | **Required**. your comment |
-
-* Get All Products by Video Id
-```
-  GET /play/products/${id}
-```
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. Video Id (_id) |
-
-* Add a product
-```
-  POST /play/products/${id}
-```
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. Video Id (_id) |
+```Client sending request``` -> ```models files``` -> ```grab data from MongoDB```->```use case files, data is processed```-> ```controller files, handle req, res``` -> ```router files, handling path``` -> ```server.js```
 
 # API Request and Response
 
