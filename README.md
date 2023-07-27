@@ -1,9 +1,8 @@
-# Play API
 
+# Play API
 ## Database Structure
 
-- Video Schema
-
+* Channel Schema
 ```http
   {
     _id: ObjectId(),
@@ -13,9 +12,7 @@
     ended_at: Date.now,
   }
 ```
-
-- Comment Schema
-
+* Comment Schema
 ```http
   {
     _id: ObjectId(),
@@ -25,9 +22,7 @@
     timestamp: Date.now
   }
 ```
-
-- Product Schema
-
+* Product Schema
 ```http
   {
     _id: ObjectId(),
@@ -38,62 +33,220 @@
   }
 ```
 
+.
 ## API Structure
-
-- Get All Thumbnail
-
+* Get All Thumbnail
 ```http
   GET /play/thumbnails
 ```
-
-- Post a video
-
+* Post a video
 ```http
   POST /play/post-video
 
 ```
-
-| Parameter       | Type     | Description                         |
-| :-------------- | :------- | :---------------------------------- |
-| `title`         | `string` | **Required**. Your Video title      |
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `title` | `string` | **Required**. Your Video title |
 | `thumbnail_img` | `string` | **Required**. Your thumbnail source |
 
-- Get Comments By Video Id
-
+* Get Comments By Video Id
 ```http
   GET /play/comments/${id}
 ```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id` | `string` | **Required**. Video id (_id)|
 
-| Parameter | Type     | Description                   |
-| :-------- | :------- | :---------------------------- |
-| `id`      | `string` | **Required**. Video id (\_id) |
-
-- Post a comment
-
+* Post a comment
 ```http
-  POST /comments/${id}
+  POST /play/comments/${id}
 ```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id` | `string` | **Required**. Video id (_id) |
+| `username` | `string` | **Required**. your username |
+| `comment` | `string` | **Required**. your comment |
 
-| Parameter | Type     | Description                   |
-| :-------- | :------- | :---------------------------- |
-| `id`      | `string` | **Required**. Video id (\_id) |
-
-- Get All Products by Video Id
-
+* Get All Products by Video Id
 ```http
   GET /play/products/${id}
 ```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id` | `string` | **Required**. Video Id (_id) |
 
-| Parameter | Type     | Description                   |
-| :-------- | :------- | :---------------------------- |
-| `id`      | `string` | **Required**. Video Id (\_id) |
-
-- Add a product
-
+* Add a product
 ```http
   POST /play/products/${id}
 ```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id` | `string` | **Required**. Video Id (_id) |
 
-| Parameter | Type     | Description                   |
-| :-------- | :------- | :---------------------------- |
-| `id`      | `string` | **Required**. Video Id (\_id) |
+# API Request and Response
+
+## GET /play/thumbnails
+* URL Params \
+  none
+* Data Params \
+  None
+* Headers \
+  Content-Type: application/json
+* Success Response \
+  * Code: 200 \
+  * Content:
+  ```
+  {
+    thumbnails: [
+      {<channel_object>}
+      {<channel_object>}
+      {<channel_object>}
+    ]
+  }
+  ```
+
+## POST /play/post-video
+* URL Params \
+  none
+* Data Params 
+  ```
+  {
+    title: string,
+    thumbnail_img: string
+  }
+  ```
+* Headers \
+  Content-Type: application/json
+* Success Response \
+  * Code: 200 \
+  * Content:
+  ```
+  {
+    video: {<channel_object>}
+  }
+  ```
+* Error Response: \
+  * Code: 400 \
+    content: ```{message: title and thumbnail_img are required}```
+
+
+## GET /play/comments/:id
+* URL Params \
+  Required: ```id: string```
+* Data Params  \
+  None
+* Headers \
+  Content-Type: application/json
+* Success Response \
+  * Code: 200 \
+  * Content:
+  ```
+  {
+    comments: [
+      {<comment_object>},
+      {<comment_object>},
+      {<comment_object>} 
+    ]
+  }
+  ```
+* Error Response:
+  * Code: 404 \
+    content: ```{message: "Video content not found"}```\
+    OR 
+  * Code: 400 \
+    content: ``` {message: "Cast to ObjectId failed for value \"${id}" (type string) at path \"_id"} ``` 
+
+
+
+## POST /play/comments/:id
+  * URL Params \
+  Required: ```id: string```
+* Data Params  \
+  ```
+  {
+    username: string,
+    comment: string
+  }
+  ```
+* Headers \
+  Content-Type: application/json
+* Success Response \
+  * Code: 200 \
+  * Content:
+  ```
+  {
+    message:"Comment successfully added"
+  }
+  ```
+* Error Response:
+  * Code: 404 \
+    content: ```{message: "Video content not found"}```\
+    OR 
+  * Code: 400 \
+    content: ``` {message: "Cast to ObjectId failed for value \"${id}" (type string) at path \"_id"} ``` 
+  * Code: 400 \
+    content: ```{message: title and thumbnail_img are required}```
+
+## GET /play/products/:id
+  * URL Params \
+  Required: ```id: string```
+* Data Params  \
+* Headers \
+  Content-Type: application/json
+* Success Response \
+  * Code: 200 \
+  * Content:
+  ```
+  {
+    products:[
+      {<product_object>},
+      {<product_object>},
+      {<product_object>}
+    ]
+  }
+  ```
+* Error Response:
+  * Code: 404 \
+    content: ```{message: "Video content not found"}```\
+
+    OR 
+  * Code: 400 \
+    content: ``` {message: "Cast to ObjectId failed for value \"${id}" (type string) at path \"_id"} ``` 
+
+
+## POST /play/products/:id
+  * URL Params \
+  Required: ```id: string```
+* Data Params  \
+  ```
+  {
+    "link_product":string,
+      "name":string,
+      "price":int
+  }
+  ```
+* Headers \
+  Content-Type: application/json
+* Success Response \
+  * Code: 200 \
+  * Content:
+  ```
+  {
+    product:{<product_object>}
+  }
+  ```
+* Error Response:
+  * Code: 404 \
+    content: ```{message: "Video content not found"}```\
+
+    OR 
+  * Code: 400 \
+    content: ``` {message: "Cast to ObjectId failed for value \"${id}" (type string) at path \"_id"} ``` 
+
+    OR
+  * Code: 400 \
+    content: ```{message: Data link_product, name, price are required!}```
+
+    OR
+  * Code: 400 \
+    content: ```{message: price should be number}```
