@@ -21,10 +21,20 @@ const productSchema = new mongoose.Schema({
 
 const Product = mongoose.model('Product', productSchema)
 
+const countData = getAllProducts().then(data => data.length)
+
+if(countData <1){
+const addData = new Product({
+  link_product: "https://nodejs.org/en",
+  title:"NodeJS installer",
+  price:50000,
+  videoID: '64c21000258b2c61c16a576e'
+}).save().then(data => console.log("data product inserted"))
+}
+
 export async function getAllProducts(){
   return await Product.find()
 }
-
 export async function addProducts(linkProduct,name, price, videoID){
   const addProduct = new Product({
     link_product: linkProduct,
