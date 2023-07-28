@@ -95,9 +95,9 @@ so files in order:
     content: ```{message: title and thumbnail_img are required}```
 
 
-## GET /play/comments/:id
+## GET /play/comments/:videoID
 * URL Params \
-  Required: ```id: string```
+  Required: ```videoID: string``` 
 * Data Params  \
   None
 * Headers \
@@ -123,9 +123,9 @@ so files in order:
 
 
 
-## POST /play/comments/:id
+## POST /play/comments/:videoID
   * URL Params \
-  Required: ```id: string```
+  Required: ```videoID: string```
 * Data Params  \
   ```
   {
@@ -152,9 +152,9 @@ so files in order:
   * Code: 400 \
     content: ```{message: title and thumbnail_img are required}```
 
-## GET /play/products/:id
+## GET /play/products/:videoID
   * URL Params \
-  Required: ```id: string```
+  Required: ```videoID: string```
 * Data Params  \
 * Headers \
   Content-Type: application/json
@@ -179,9 +179,9 @@ so files in order:
     content: ``` {message: "Cast to ObjectId failed for value \"${id}" (type string) at path \"_id"} ``` 
 
 
-## POST /play/products/:id
+## POST /play/products/:videoID
   * URL Params \
-  Required: ```id: string```
+  Required: ```videoID: string```
 * Data Params  \
   ```
   {
