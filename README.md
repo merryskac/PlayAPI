@@ -223,7 +223,7 @@ so files in order:
 3. Clone this repo locally in your computer using terminal
 \
   ```git clone https://github.com/merryskac/PlayAPI.git ``` \
-  and then do on your terminal
+  and then do on your terminal\
 
   ```cd PlayAPI```
 
