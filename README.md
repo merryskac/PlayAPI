@@ -35,7 +35,14 @@
 
 .
 ## API Structure
-```Client sending request``` -> ```server.js``` -> ```router files, handle req, res```->```use case files```->```model files```->```grab data from MongoDB```->```Data go to model files as return```->```model files return data to usecase files```->```use case files process datas and return it to router files```->```router files handle data and make it a JSON response```->```Give the data to client```
+```Client sending request``` -> ```server.js``` -> ```router files, handle specific path```->```controller files, handle req, res```->```use case files, call model function```->```model files, use mongoose function```->```grab data from MongoDB```->```Data go to model files as return```->```model files return data to usecase files```->```use case files process datas and return it to controller files```->```controller files handle data and make it a JSON response```->```Data go to router files as return```->```give result to client```
+
+so in folder in order:
+```server.js (/play)```
+```router files (channel, comment, product)```
+```use case files (channel, comment, product)```
+```controller files (channel, comment,product)```
+```model files (channel,comment, product)```
 
 # API Request and Response
 
