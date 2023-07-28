@@ -224,7 +224,6 @@ so files in order:
 \
   ```git clone https://github.com/merryskac/PlayAPI.git ``` \
   and then do on your terminal\
-
   ```cd PlayAPI```
 
 5. On your terminal, do
