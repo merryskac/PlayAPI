@@ -232,7 +232,7 @@ so files in order:
 6. Make sure you have installed "MongoDB Compass" on your computer. You can get it from https://www.mongodb.com/products/compass
 
 7. On MongoDB Compass, connect to the Database with URI
- ```mongodb://localhost:27017```
+ ```mongodb://localhost:27017``` OR ```mongodb://0.0.0.0:27017```
 
 8. On your terminal, type 
 ```node server.js```
