@@ -224,20 +224,21 @@ so files in order:
 \
   ```git clone https://github.com/merryskac/PlayAPI.git ``` \
   and then do on your terminal
-  ```cd playAPI```
 
-4. On your terminal, do
+  ```cd PlayAPI```
+
+5. On your terminal, do
 ```npm install``` to install necessary package for this program
 
-5. Make sure you have installed "MongoDB Compass" on your computer. You can get it from https://www.mongodb.com/products/compass
+6. Make sure you have installed "MongoDB Compass" on your computer. You can get it from https://www.mongodb.com/products/compass
 
-6. On MongoDB Compass, connect to the Database with URI
+7. On MongoDB Compass, connect to the Database with URI
  ```mongodb://localhost:27017```
 
-7. On your terminal, type 
+8. On your terminal, type 
 ```node server.js```
 
-8. On your terminal, there will be message
+9. On your terminal, there will be message
 ```
 server Open!
 Database Connected!
