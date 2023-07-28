@@ -35,7 +35,7 @@
 
 .
 ## API Structure
-```Client sending request``` -> ```server.js``` -> ```router files, handle req, res```->```use case files```->```model files```->```grab data from MongoDB```->```give response to client```
+```Client sending request``` -> ```server.js``` -> ```router files, handle req, res```->```use case files```->```model files```->```grab data from MongoDB```->```Data go to model files as return```->```model files return data to usecase files```->```use case files process datas and return it to router files```->```router files handle data and make it a JSON response```->```Give the data to client```
 
 # API Request and Response
 
