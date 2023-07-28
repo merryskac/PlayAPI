@@ -248,4 +248,6 @@ Database Connected!
 Make sure this port is clear.
 You can try with your browser, or Postman App, or terminal using curl.
 
+10. Once the program is running, this program automatically insert a document of data to the database if you don't have the same database. so, if you do (example) ```GET /play/thumbnail``` for the first time, even you have not insert any data yet, you will get document as a response.
+
 P.S. I hope this instruction is clear, and hopefully I can get max Grade for this mid term in this GIGIH 3.0 Program ✌
